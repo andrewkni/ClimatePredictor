@@ -48,6 +48,7 @@ Trades will be logged in trade_log.txt.
 
 ## history.py
 - Fetches 1-minute candlesticks for multiple markets over the last 3 days
+- Cleans data fetched from Kalshi API
 - Aligns timestamps (forward-fill), computes sum_yes, plots it, and prints times where sum_yes = THRESH
 - Used to analyze historical price data to find when multi-market set arbitrage opportunities may have appeared
 ```bash
