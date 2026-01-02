@@ -30,7 +30,7 @@ def place_bet(ticker, action, side, price):
         "count": 1,
         "type": "limit",
         side_key: price,
-        "time_in_force": "fill_or_kill",
+        "time_in_force": "immediate_or_cancel",
         "post_only": False,
         "reduce_only": is_sell,
         "cancel_order_on_pause": True
@@ -57,6 +57,7 @@ def log_bet_attempt(response, price):
     if not "order" in data:
         print("----BET ATTEMPT START----")
         print(f"> Status code: {response.status_code}")
+        print(f"> Message: {response.json()['error']['message']}")
         print("> ERROR: BET NOT PROCESSED")
         print("----BET ATTEMPT END----")
         return
