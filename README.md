@@ -46,6 +46,14 @@ python kalshi_event_arbitrage.py
 You will be prompted for min_balance (the minimum balance you want to keep on your Kalshi account), margin (the profit margin you want to make), and the event tickers you wish to trade.
 Trades will be logged in trade_log.txt.
 
+## history.py
+- Fetches 1-minute candlesticks for multiple markets over the last 3 days
+- Aligns timestamps (forward-fill), computes sum_yes, plots it, and prints times where sum_yes = THRESH
+- Used to analyze historical price data to find when multi-market set arbitrage opportunities may have appeared
+```bash
+python history.py
+```
+
 ## Contributors
 Andrew Ni  
 Aidan Haya  
