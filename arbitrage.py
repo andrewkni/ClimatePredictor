@@ -31,13 +31,13 @@ def compute_sum(markets, side, ask_or_bid):
 # Checks if sufficient balance to purchase contracts
 # Checks if min balance is exceeded
 def orderable(markets, side, action, min_balance):
+    # Check if sufficient balance
+    balance = api.get_balance()
+
     for market in markets:
         # Check if market is open
         if market.get("status") != "active":
             return False
-
-        # Check if sufficient balance
-        balance = api.get_balance()
 
         # checks if you have enough funds to buy all shares while keeping min balance
         if action == "buy":
